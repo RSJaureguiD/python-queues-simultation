@@ -22,7 +22,7 @@ Dado el problema se destaca la siguiente información:
 - Tenemos 1 equipo de reparación.
 - Arrivos exponenciales, y tiempos de reparación exponenciales.
 - La capacidad del sistema es indeterminada.
-- La población es dificil de determinar. Se mencionan 5 clientes pero no se sabe cuantos equipos tienen cada uno. Como minimo se asume que cada cliente tiene al menos 1 equipo, por lo que la población mínima es 5. Sin embargo, no se sabe si hay más clientes o más equipos por cliente. Por lo tanto, se puede incluso considerar una población infinita. Para este ejercicio asumimos una población de 5 equipos, ya que es la información más concreta que se tiene.
+- La población es dificil de determinar. Se mencionan 5 clientes pero no se sabe cuantos equipos tienen cada uno. Como minimo se asume que cada cliente tiene al menos 1 equipo, por lo que la población mínima es 5. Sin embargo, no se sabe si hay más equipos por cliente. Por lo tanto, se puede incluso considerar una población infinita. Para este ejercicio asumimos una población de 5 equipos, ya que es la información más concreta que se tiene.
 - Se reciben 2 maquinas por día
 - Se pueden reparar 12 máquinas por día.
 - Se asume las maquinas se reparan en el orden de llegada
