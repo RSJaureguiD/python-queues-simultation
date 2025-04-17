@@ -1,0 +1,9 @@
+[project]
+name = "markovfilas"
+version = "0.1.0"
+description = "Entrega para Modelos formales sobre Filas de Espera y Cadenas de Markov"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.2.4",
+]
