@@ -98,4 +98,22 @@ pip install numpy
 python main.py
 ```
 
+# Ejemplo de salida
 
+```bash
+D:\path\to\dir>.\.venv\Scripts\python.exe .\main.py
+
+Resultados obtenidos al aplicar el modelo M/M/1 FIFO/-/5:
+=========================================================
+
+Ejercicio a)
+Cantidad media de equipos rotos: 0.18 equipos por hora
+
+Ejercicio b)
+Tiempo medio que los equipos esperan para ser reparados: 137.02 minutos
+
+Ejercicio c)
+Probabilidad de que 2 o más equipos estén fuera de servicio: 2.06 %
+
+=========================================================
+```
