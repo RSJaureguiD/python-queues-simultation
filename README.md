@@ -15,11 +15,33 @@ Una empresa de aire acondicionado tiene el servicio de reparación de sistema ce
 2. Tiempo medio que los equipos esperan para ser reparados
 3. Probabilidad de que 2 o más equipos estén fuera de servicio
 
-# Requerimientos
+# Solución
+
+Dado el problema se destaca la siguiente información:
+
+- Tenemos 1 equipo de reparación.
+- Arrivos exponenciales, y tiempos de reparación exponenciales.
+- La capacidad del sistema es indeterminada.
+- La población es dificil de determinar. Se mencionan 5 clientes pero no se sabe cuantos equipos tienen cada uno. Como minimo se asume que cada cliente tiene al menos 1 equipo, por lo que la población mínima es 5. Sin embargo, no se sabe si hay más clientes o más equipos por cliente. Por lo tanto, se puede incluso considerar una población infinita. Para este ejercicio asumimos una población de 5 equipos, ya que es la información más concreta que se tiene.
+- Se reciben 2 maquinas por día
+- Se pueden reparar 12 máquinas por día.
+- Se asume las maquinas se reparan en el orden de llegada
+
+Este analisis lleva a considerar un modelo M/M/1 FIFO/-/5, tasa de servicio de 12 por dia. La tasa de llegada individual la podemos calcular como $\lambda_{ind} = \lambda_0 = \dfrac{\lambda_n}{m} = \dfrac{2}{5} = 0.4$ por día.
+
+## Parametros del modelo
+
+1. Modelo M/M/1 FIFO/-/5
+2. Tasa de llegada: $\lambda = 2$ por día $\Rightarrow \lambda_{ind} = \dfrac{2}{5}$ por día $= \dfrac{1}{60}$ por hora.
+3. Tasa de servicio: $\mu = 12$ por día $\Rightarrow \mu = \dfrac{1}{2}$ por hora.
+
+# Programa
+
+## Requerimientos
 
 - Python 3.12
 
-## Librerías
+### Librerías
 
 - **numpy**:
 
@@ -37,9 +59,9 @@ Es una librería estándar de python que permite crear enumeraciones. En este ca
 
 Es una librería estándar de python para realizar pruebas unitarias. En este caso se utiliza para probar el correcto funcionamiento de las clases creadas y los modelos.
 
-# Instrucciones
+## Instrucciones
 
-## Con uv
+### Con uv
 
 1. Instalar uv: 
 
@@ -65,7 +87,7 @@ uv run main.py
 
 Alternativamente, correr el archivo `start.bat` luego de haber instalado uv y sincronizado el entorno. Este archivo ejecuta el script main.py en el entorno virtual creado.
 
-## Sin uv
+### Sin uv
 
 1. Instalar python 3.12
 
@@ -98,7 +120,7 @@ pip install numpy
 python main.py
 ```
 
-# Ejemplo de salida
+## Ejemplo de salida
 
 ```bash
 D:\path\to\dir>.\.venv\Scripts\python.exe .\main.py

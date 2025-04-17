@@ -16,8 +16,8 @@ Una empresa de aire acondicionado tiene el servicio de reparación de sistema ce
 Este analisis lleva a considerar un modelo M/M/1 FIFO/-/5, tasa de servicio de 12 por dia. La tasa de llegada individual la podemos calcular como $lambda_{ind} = lambda_0 = frac{lambda_n}{m} = frac{2}{5} = 0.4$ por día.
 """
 
-LMBDA = (2/5)/24 # tasa de llegada por hora (0.4/dia)
-MU = 12/24 # tasa de servicio por hora (12/dia)
+LMBDA = 1/60 # tasa de llegada por hora
+MU = 1/2 # tasa de servicio por hora
 POPULATION = 5 # poblacion (5 clientes)
 
 MODEL = MM1CappedPopulation(lmbda=LMBDA, mu=MU, m=POPULATION)
