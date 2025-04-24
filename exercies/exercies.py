@@ -13,11 +13,11 @@ Una empresa de aire acondicionado tiene el servicio de reparación de sistema ce
 - Se pueden reparar 12 máquinas por día.
 - Se asume las maquinas se reparan en el orden de llegada
 
-Este analisis lleva a considerar un modelo M/M/1 FIFO/-/5, tasa de servicio de 12 por dia. La tasa de llegada individual la podemos calcular como $lambda_{ind} = lambda_0 = frac{lambda_n}{m} = frac{2}{5} = 0.4$ por día.
+Este análisis lleva a considerar un modelo M/M/1 FIFO/-/5, tasa de servicio de 12 por dia y tasa de llegada de 2 por dia.
 """
 
-LMBDA = 1/60 # tasa de llegada por hora
-MU = 1/2 # tasa de servicio por hora
+LMBDA = 2 # tasa de llegada por dia
+MU = 12 # tasa de servicio por dia
 POPULATION = 5 # poblacion (5 clientes)
 
 MODEL = MM1CappedPopulation(lmbda=LMBDA, mu=MU, m=POPULATION)
@@ -29,16 +29,16 @@ def exercise_a():
     Esta es la cantidad media de unidades en el sistema.
     """
 
-    print(f"Cantidad media de equipos rotos: {MODEL.system_units_amount_mean():.2f} equipos por hora", )
+    print(f"Cantidad media de equipos rotos: {MODEL.system_units_amount_mean():.2f}", )
 
 def exercise_b():
     """
     Ejercicio b) Tiempo medio que los equipos esperan para ser reparados.
 
-    Puede ser el tiempo que esperan en fila para empezar a ser reparados, o el tiempo que esperan en el sistema hasta terminar de ser reparados. Se escoje el tiempo en el sistema.
+    Puede ser el tiempo que esperan en fila para empezar a ser reparados, o el tiempo que esperan en el sistema hasta terminar de ser reparados. Se escoge el tiempo en el sistema.
     """
 
-    print(f"Tiempo medio que los equipos esperan para ser reparados: {MODEL.time_in_system_mean()*60:.2f} minutos")
+    print(f"Tiempo medio que los equipos esperan para ser reparados: {MODEL.time_in_system_mean():.2f} días")
 
 def exercise_c():
     """
